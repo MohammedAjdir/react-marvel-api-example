@@ -8,9 +8,10 @@ class Main extends Component {
     componentDidMount() {
 		
 		let now = Date.now();
-		let key = "47a3abe25e7f1d99a5dc79614ad66d1b";
-		let hash = md5(now + "8c2338ceb8f005599274b93cf1f0ad1800acfa4a" + "47a3abe25e7f1d99a5dc79614ad66d1b");
-        this.props.fetchData('https://gateway.marvel.com/v1/public/stories/29?ts='+ now + '&apikey=' + key + '&hash=' + hash);
+		let publicKey = "XXXXXX"; // public key goes here
+		let privateKey = "XXXXXX" ; // private key goes here
+		let hash = md5(now + privateKey + publicKey);
+        this.props.fetchData('https://gateway.marvel.com/v1/public/stories/29?ts='+ now + '&apikey=' + publicKey + '&hash=' + hash);
 		
     }
 	
